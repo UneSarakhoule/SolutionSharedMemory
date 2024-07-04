@@ -12,7 +12,7 @@ namespace AppSharedMemory
 {
     public partial class Form1 : Form
     {
-        ServiceMetier.Service1Client service;
+        ServiceMetier.Service1Client service = new ServiceMetier.Service1Client();
         public Form1()
         {
             service = new ServiceMetier.Service1Client();
@@ -21,7 +21,8 @@ namespace AppSharedMemory
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+           dgJury.DataSource = service.GetJurys();
         }
+        
     }
 }
